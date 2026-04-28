@@ -1,4 +1,4 @@
-# 💸 ExpenseFlow
+# 💸 ExpenseFlow o
 
 > A sleek, full-stack expense tracking application built with Node.js, Express, MongoDB, and vanilla JavaScript.
 
