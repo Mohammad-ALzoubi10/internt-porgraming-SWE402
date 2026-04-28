@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ExpenseFlow | Premium Expense Tracker</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="background-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <main class="app-container">
+        <header>
+            <div class="logo">
+                <i class="fas fa-wallet"></i>
+                <h1>ExpenseFlow</h1>
+            </div>
+            <div class="balance-card">
+                <p class="balance-label">Total Balance</p>
+                <h2 id="total-balance">$0.00</h2>
+            </div>
+        </header>
+
+        <section class="stats-grid">
+            <div class="stat-item income">
+                <div class="icon-circle"><i class="fas fa-arrow-up"></i></div>
+                <div>
+                    <p>Total Income</p>
+                    <h3 id="total-income">$0.00</h3>
+                </div>
+            </div>
+            <div class="stat-item expense">
+                <div class="icon-circle"><i class="fas fa-arrow-down"></i></div>
+                <div>
+                    <p>Total Expenses</p>
+                    <h3 id="total-expense">$0.00</h3>
+                </div>
+            </div>
+        </section>
+
+        <div class="main-grid">
+            <!-- Add Transaction Section -->
+            <section class="glass-card transaction-form">
+                <div class="card-header">
+                    <h2><i class="fas fa-plus-circle"></i> Add Transaction</h2>
+                </div>
+                <form id="expense-form">
+                    <div class="input-group">
+                        <label for="title">Description</label>
+                        <input type="text" id="title" placeholder="e.g. Weekly Groceries" required>
+                    </div>
+                    <div class="input-row">
+                        <div class="input-group">
+                            <label for="amount">Amount ($)</label>
+                            <input type="number" id="amount" step="0.01" placeholder="0.00" required>
+                        </div>
+                        <div class="input-group">
+                            <label for="category">Category</label>
+                            <select id="category">
+                                <option value="Food">Food</option>
+                                <option value="Entertainment">Entertainment</option>
+                                <option value="Utilities">Utilities</option>
+                                <option value="Transport">Transport</option>
+                                <option value="Health">Health</option>
+                                <option value="Salary">Salary</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn-submit">
+                        <span>Save Transaction</span>
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </form>
+            </section>
+
+            <!-- History Section -->
+            <section class="history-section">
+                <div class="section-header">
+                    <h2>Recent History</h2>
+                    <span id="transaction-count">0 items</span>
+                </div>
+                <div id="expense-list" class="expense-list">
+                    <!-- Transactions will be injected here -->
+                    <div class="empty-state">
+                        <i class="fas fa-receipt"></i>
+                        <p>No transactions yet. Start adding some!</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
